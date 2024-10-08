@@ -10,6 +10,7 @@ import About from "./pages/Contact.jsx"
 import AIPage from "./pages/AIPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Contact from "./pages/Contact.jsx";
+import HomePage from "./pages/HomePage.jsx";
 // const styles = {
 //   global: (props) => ({
 //     body: {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
           path:"ai-translate",
           element:<AIPage/>,
         },
+        {
+          path:"home",
+          element:<HomePage/>
+        }
         
         
 
