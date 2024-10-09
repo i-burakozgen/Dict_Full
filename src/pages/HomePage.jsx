@@ -8,13 +8,16 @@ import Features from '../components/Features/Features';
 import SlideableGallery from '../components/SlideableGallery/SlideableGallery';
 import Footer from '../components/Footer/Footer';
 import About from "../components/About/About";
+import { galleryData } from '../assets/homeData';
 
 const HomePage = () => {
+  
+
   return (
     <Box>
       <Hero/>
       <Features/>
-      <SlideableGallery/>
+      <SlideableGallery images={galleryData}/>
       <About/>
       <Footer/>
     </Box>

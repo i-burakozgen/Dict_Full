@@ -2,10 +2,11 @@ import {
     Box, Heading, Text, Button, VStack, HStack, Link, Image, SimpleGrid, useColorMode, useColorModeValue 
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router-dom';
+  import { heroData } from '../../assets/homeData';
 const Hero = () => {
     const navigate = useNavigate();
     const { colorMode, toggleColorMode } = useColorMode();
-    const heroBgGradient = useColorModeValue("linear(to-r, teal.300, blue.400)", "linear(to-r, teal.800, blue.900)");
+    const heroBgGradient = useColorModeValue("linear(to-r, teal.400, blue.800)", "linear(to-r, teal.800, blue.900)");
     const heroTextColor = useColorModeValue("gray.800", "white");
   return (
     <Box
@@ -16,17 +17,17 @@ const Hero = () => {
         px={8}
       >
         <Heading as="h1" size="3xl" mb={4}>
-          AI Transliteration & Ottoman Dictionary
+          {heroData[0].heading}
         </Heading>
         <Text fontSize="xl" mb={8}>
-          Transform Ottoman text into modern Turkish and English. Search for word from rich and truested database and transliterate Ottoman scripts.
+        {heroData[0].text}
         </Text>
         <HStack spacing={4} justify="center">
           <Button colorScheme="teal" size="lg" onClick={() => navigate('/ai-translate')}>
-            Try Transliteration
+          {heroData[0].buttonTextAi}
           </Button>
           <Button colorScheme="blue" size="lg" onClick={() => navigate('/dictionary')}>
-            Go To Dictionary
+          {heroData[0].buttonTextDict}
           </Button>
         </HStack>
       </Box>

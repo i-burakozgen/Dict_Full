@@ -12,12 +12,19 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { featuersData } from "../../assets/homeData";
 const Features = () => {
+  const { colorMode } = useColorMode();
   const navigate = useNavigate();
+  const aiImage = colorMode === "light" ?
+  featuersData[0].aiData.imageDark:
+  featuersData[0].aiData.imageLight;
+  const dictImage = colorMode ==="light" ?
+  featuersData[0].dictionaryData.imageDark:
+  featuersData[0].dictionaryData.imageLight
 
   // Access the color mode
-  const { colorMode, toggleColorMode } = useColorMode();
-  const sectionBgColor = useColorModeValue("gray.50", "gray.700");
+  const sectionBgColor = useColorModeValue("gray.200", "gray.900");
   return (
     <Box
       py={16}
@@ -31,28 +38,32 @@ const Features = () => {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <VStack>
           <Image
-            src="../../assets/ai-underconstructionDark"
+            src={aiImage}
             alt="AI Transliteration"
+            boxSize={"150px"}
+            objectFit="cover"
           />
           <Heading as="h3" size="lg">
-            AI Transliteration
+            {featuersData[0].aiData.aiHeading}
           </Heading>
           <Text textAlign="center">
-            Use our state-of-the-art AI model to transliterate Ottoman text into
-            modern Turkish and English preserving its rich linguistic heritage.
+           {featuersData[0].aiData.aiText}
           </Text>
         </VStack>
         <VStack>
           <Image
-            src="https://via.placeholder.com/150"
-            alt="Ottoman Dictionary"
+            src={dictImage}
+            alt={featuersData[0].aiData.aiTextAlt}
+            boxSize={"150px"}
+            objectFit="cover"
           />
+        
           <Heading as="h3" size="lg">
-            Ottoman Dictionary
+          {featuersData[0].dictionaryData.dictHeading}
+
           </Heading>
           <Text textAlign="center">
-            Search for thousands of Ottoman words and their meanings in modern
-            from trusted resources.
+            {featuersData[0].dictionaryData.dictText}
           </Text>
         </VStack>
       </SimpleGrid>
