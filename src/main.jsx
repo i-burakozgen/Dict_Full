@@ -52,7 +52,7 @@ const router = createBrowserRouter([
           element:<AIPage/>,
         },
         {
-          path:"home",
+          path:"/",
           element:<HomePage/>
         }
         
