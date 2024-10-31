@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PageLayout from "./layout/PageLayout.jsx";
-import AuthPage from "./pages/AuthPage.jsx";
 import theme from "./theme/theme.js"
 import Dictionary from "./pages/Dictionary.jsx";
 import About from "./pages/Contact.jsx"
@@ -11,6 +10,7 @@ import AIPage from "./pages/AIPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Contact from "./pages/Contact.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
 // const styles = {
 //   global: (props) => ({
 //     body: {
