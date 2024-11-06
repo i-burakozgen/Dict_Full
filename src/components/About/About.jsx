@@ -7,6 +7,7 @@ import {
   Link,
   Image,
   SimpleGrid,
+  Link as ChakraLink,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaLinkedin } from "react-icons/fa";
@@ -22,6 +23,9 @@ const About = () => {
       </Heading>
       <Text fontSize="xl" mb={8}>
         {aboutData[0].text}
+        <ChakraLink as={Link} to="/contact" color="red.200" ml={1}>
+          contact me
+        </ChakraLink> 
       </Text>
       <SimpleGrid columns={{ base: 1, md: 1 }} spacing={10}>
         <VStack>
