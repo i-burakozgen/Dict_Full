@@ -9,6 +9,7 @@ import SlideableGallery from '../components/SlideableGallery/SlideableGallery';
 import Footer from '../components/Footer/Footer';
 import About from "../components/About/About";
 import { galleryData } from '../assets/homeData';
+import CompactContact from '../components/Contact/CompactContact';
 
 const HomePage = () => {
   
@@ -19,6 +20,7 @@ const HomePage = () => {
       <Features/>
       <SlideableGallery images={galleryData}/>
       <About/>
+      <CompactContact/>
       <Footer/>
     </Box>
   )
